@@ -1,0 +1,12 @@
+- name: Install the latest version of Expect
+  yum:
+    name: expect
+    state: latest
+
+- name: Install the latest version of Except
+  command: "rpm -qa | grep -i expect"
+  register: package
+  
+- name: print output
+  debug:  
+    var: package
